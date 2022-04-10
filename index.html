@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="index.css" rel="stylesheet">
+    <script>
+        function addCard() {
+            var card = document.getElementById("card");
+            var card_container = document.getElementById("card_container");
+            var new_card = card.cloneNode(true);
+            card_container.appendChild(new_card);
+        }
+        for (let i = 0; i < 3; i++) {
+            addCard();
+        }
+        for (let i = 0; i < 3; i++) {
+            addCard();
+        }
+        // find all images without alternate text
+        // and give them a red border
+        void process() {
+            var images = document.querySelectorAll("img[alt='']");
+            for (let i = 0; i < images.length; i++) {
+                images[i].style.border = "1px solid red";
+            }
+        }
+        //find all paragraphs and give them red color
+        void process2() {
+            var paragraphs = document.querySelectorAll("p");
+            for (let i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].style.color = "red";
+            }
+        }
+        //change all spans to divs
+        void process3() {
+            var spans = document.querySelectorAll("span");
+            for (let i = 0; i < spans.length; i++) {
+                var new_div = document.createElement("div");
+                new_div.innerHTML = spans[i].innerHTML;
+                spans[i].parentNode.replaceChild(new_div, spans[i]);
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>What is the capital of...</h1>
+<div id="quiz">
+    <div class="card-container"><div class="card"><div class="front"><p>Greece</p></div><div class="back"><p>Athens</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Italy</p></div><div class="back"><p>Rome</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>France</p></div><div class="back"><p>Paris</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Germany</p></div><div class="back"><p>Berlin</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Russia</p></div><div class="back"><p>Moscow</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Ukraine</p></div><div class="back"><p>Kiev</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>UK</p></div><div class="back"><p>London</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Spain</p></div><div class="back"><p>Madrid</p></div></div></div>
+    <div class="card-container"><div class="card"><div class="front"><p>Austria</p></div><div class="back"><p>Vienna</p></div></div></div>
+</div>
+</body>
+</html>
